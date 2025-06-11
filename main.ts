@@ -1,6 +1,7 @@
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     radio.sendString("NEED_HELP")
     basic.showString("Help requested")
+    music.play(music.stringPlayable("C5 F A C5 A C5 F C5 ", 240), music.PlaybackMode.UntilDone)
 })
 input.onButtonPressed(Button.A, function () {
     if (scene == 2) {
