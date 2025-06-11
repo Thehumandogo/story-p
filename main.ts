@@ -1,3 +1,7 @@
+input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
+    radio.sendString("NEED_HELP")
+    basic.showString("Help requested")
+})
 input.onButtonPressed(Button.A, function () {
     if (scene == 2) {
         basic.showString("" + ((0 as any) > (128 as any)))
@@ -57,6 +61,21 @@ input.onGesture(Gesture.TiltLeft, function () {
         basic.showIcon(IconNames.Yes)
         basic.showString("You escaped safely")
         scene = 5
+    }
+})
+input.onButtonPressed(Button.AB, function () {
+    if (scene == 16) {
+        radio.sendString("HERO_WINS")
+        basic.showString("story shared")
+    }
+})
+radio.onReceivedString(function (receivedString) {
+    if (receivedString == "HERO_WINS") {
+        basic.showString("ANOTHER HERO WON")
+        basic.showIcon(IconNames.Heart)
+    } else if (receivedString == "NEED_HELP") {
+        basic.showString("SOMEONE ELSEWHERE IS IN DANGER")
+        basic.showIcon(IconNames.Confused)
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -133,6 +152,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
             music.playTone(262, music.beat(BeatFraction.Quarter))
         }
         basic.showString("Victory!")
+        scene = 16
     }
 })
 let scene = 0
@@ -140,6 +160,7 @@ scene = 1
 let playerName = "Hero"
 basic.showString("...!")
 basic.showString("Welcome to the enchanted forest, click A to start")
+radio.setGroup(1)
 basic.forever(function () {
     if (scene == 5) {
         if (input.soundLevel() > 128) {
