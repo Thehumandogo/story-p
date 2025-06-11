@@ -1,10 +1,4 @@
 input.onButtonPressed(Button.A, function () {
-    if (scene == 1) {
-        basic.showString("You see 2 paths")
-        basic.pause(2000)
-        basic.showString("A for left, B for right")
-        scene = 2
-    }
     if (scene == 2) {
         basic.showString("" + ((0 as any) > (128 as any)))
         basic.showIcon(IconNames.Sword)
@@ -49,6 +43,12 @@ input.onButtonPressed(Button.A, function () {
     if (scene == 15) {
         basic.showString("You see bandits and shove ground bread down their throats, earning the title of hero and gaining fame and riches")
         basic.showString("You win")
+    }
+    if (scene == 1) {
+        basic.showString("You see 2 paths")
+        basic.pause(2000)
+        basic.showString("A for left, B for right")
+        scene = 2
     }
 })
 input.onGesture(Gesture.TiltLeft, function () {
