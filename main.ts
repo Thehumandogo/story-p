@@ -67,6 +67,7 @@ input.onButtonPressed(Button.AB, function () {
     if (scene == 16) {
         radio.sendString("HERO_WINS")
         basic.showString("story shared")
+        music.play(music.stringPlayable("C5 G B A F A C5 B ", 240), music.PlaybackMode.UntilDone)
     }
 })
 radio.onReceivedString(function (receivedString) {
