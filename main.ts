@@ -3,6 +3,7 @@ input.onButtonPressed(Button.A, function () {
         basic.showString("You see 2 paths")
         basic.pause(2000)
         basic.showString("A for left, B for right")
+        scene = 2
     }
     if (scene == 2) {
         basic.showString("" + ((0 as any) > (128 as any)))
