@@ -60,23 +60,15 @@ input.onGesture(Gesture.TiltLeft, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    if (scene == 2) {
-        basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
-        scene = 8
+    if (scene == 14) {
+        basic.showString("You gain ground bread immunity")
+        basic.showString("click A to explore")
+        scene = 15
     }
-    if (scene == 8) {
+    if (scene == 13) {
+        basic.showString("You Vomit Less This Time")
         basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
-        scene = 9
-    }
-    if (scene == 9) {
-        basic.showString("You Vomit")
-        basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
-        scene = 10
-    }
-    if (scene == 10) {
-        basic.showString("You Vomit")
-        basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
-        scene = 11
+        scene = 14
     }
     if (scene == 12) {
         basic.showString("You Vomit")
@@ -88,15 +80,24 @@ input.onButtonPressed(Button.B, function () {
         basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
         scene = 12
     }
-    if (scene == 13) {
-        basic.showString("You Vomit Less This Time")
+    if (scene == 10) {
+        basic.showString("You Vomit")
         basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
-        scene = 14
+        scene = 11
     }
-    if (scene == 14) {
-        basic.showString("You gain ground bread immunity")
-        basic.showString("click A to explore")
-        scene = 15
+    if (scene == 9) {
+        basic.showString("You Vomit")
+        basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
+        scene = 10
+    }
+    if (scene == 8) {
+        basic.showString("You Vomit")
+        basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
+        scene = 9
+    }
+    if (scene == 2) {
+        basic.showString("You see a piece of ground bread, Click A to ignore and B to eat")
+        scene = 8
     }
 })
 input.onGesture(Gesture.Shake, function () {
