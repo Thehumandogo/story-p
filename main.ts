@@ -131,8 +131,8 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
             music.playTone(392, music.beat(BeatFraction.Quarter))
             basic.showIcon(IconNames.SmallDiamond)
             music.playTone(262, music.beat(BeatFraction.Quarter))
-            basic.showString("Victory!")
         }
+        basic.showString("Victory!")
     }
 })
 let scene = 0
